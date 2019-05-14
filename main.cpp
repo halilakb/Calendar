@@ -55,8 +55,8 @@ int main(){
 	a2->set_place("Kağıthane Devlet Hastanesi");
 
 	Appointment* a3 = static_cast<Appointment*>(m.addEvent(1,2019,5,15,11));
-    a3->set_personname("Elif Şahin");
-    a3->set_place("Büyükşehir Belediye Binası");
+        a3->set_personname("Elif Şahin");
+        a3->set_place("Büyükşehir Belediye Binası");
 
 	Appointment* a4 = static_cast<Appointment*>(m.addEvent(1,2019,8,26,16));
 	a4->set_personname("Prof. Dr. Metin Yazgı");
