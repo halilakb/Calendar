@@ -1,7 +1,7 @@
 /*
  * main.cpp
  * 
- * Copyright 2019 Halil Akbulut <halil@debian>
+ * Copyright 2019 Halil Akbulut <halil@itu.edu.tr>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,9 +30,9 @@ using namespace std;
 
 int main(){
 	Calendar m;				// creates an empty list.
-
+											// here i created 5 task events and 5 appointment events.
 	Task* t1 = static_cast<Task*>(m.addEvent(0,2019,4,22,23));			// static_cast is used for turning an Event pointer to a Task pointer.
-	t1->set_taskname("Submit OOP Homework 2");							// with this way we can reach the set methods of the object.
+	t1->set_taskname("Submit OOP Homework 2");					// with this way we can reach the set methods of the object.
 
 	Task* t2 = static_cast<Task*>(m.addEvent(0,2019,4,22,9));
 	t2->set_taskname("OOP Midterm 2");
@@ -67,7 +67,7 @@ int main(){
 	a5->set_place("İstinye Devlet Hastanesi");
 
 	bool x = true;
-	while (x){
+	while (x){							// a choice list for user 
 		int choice;
 		cout << "1 For List Events" << endl
 			 << "2 For Delete an Event" << endl
@@ -76,7 +76,7 @@ int main(){
 		cin >> choice;
 	
 		if(choice == 1){
-			try{ m.listEvents(); }
+			try{ m.listEvents(); }					// try and catch block for listEvents method.
 			catch(const char * result){ cout << result << endl;}
 		}
 	
@@ -84,7 +84,7 @@ int main(){
 			int z;
 			cout << "Enter Event id you want to delete:";
 			cin >> z;
-			try{ m.deleteEvent(z); }
+			try{ m.deleteEvent(z); }				// try and catch block for deleteEvent method.
 			catch(const char * result){ cout << result << endl;}
 		}
 	
@@ -95,7 +95,7 @@ int main(){
 			cin >> y;
 			cout << "Month:";
 			cin >> t;
-			try{ m.filterEvents(y,t);}
+			try{ m.filterEvents(y,t);}				// try and catch block for filterEvents method.
 			catch(const char * result){ cout << result << endl;}
 		}
 		
