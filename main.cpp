@@ -1,7 +1,7 @@
 /*
  * main.cpp
  * 
- * Copyright 2019 Halil Akbulut <halil@itu.edu.tr>
+ * Copyright 2019 Halil Akbulut <akbuluth15@itu.edu.tr>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
