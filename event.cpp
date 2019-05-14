@@ -1,6 +1,6 @@
 #include "event.h"
 
-Event::Event(int a,int b,int c,int d){
+Event::Event(int a,int b,int c,int d){			// Event constructor
 	year=a;
 	month=b;
 	day=c;
