@@ -16,21 +16,21 @@ class Event{					// Abstract Event(base) class.
 	Event *next;				// next pointer for linklist
 	
 public:
-	Event(int,int,int,int);
+	Event(int,int,int,int);			// constructor of Event class
 
-	int get_year() const {return year;}
+	int get_year() const {return year;}	// get methods for member of Event class 
 	int get_month() const {return month;}
 	int get_day() const {return day;}
 	int get_hour() const {return hour;}
 	int get_id() const {return id;}
 	virtual void print() const = 0;		// pure virtual print function, makes Event class Abstract
-	virtual ~Event(){}
+	virtual ~Event(){}			// virtual destructor of Event class
 };
 
 class Task:public Event{				// Task class derived from Event class
 	string taskname;
 public:
-	Task(int,int,int,int);				// Task Constructor
+	Task(int,int,int,int);				// Task constructor
 	
 	void set_taskname(string str){ taskname = str; }			// set and get methods for taskname
 	string get_taskname() const { return taskname; }
@@ -42,7 +42,7 @@ class Appointment:public Event{				// Appointment class derived from Event class
 	string personname;
 	string place;
 public:
-	Appointment(int,int,int,int);
+	Appointment(int,int,int,int);			// Appointment constructor
 	
 	void set_personname(string str){ personname = str;}			// set-get methods of Appointment class private variables
 	string get_personname() const { return personname;}
