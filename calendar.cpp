@@ -3,7 +3,7 @@
 #include <iostream>
 
 Event* Calendar::addEvent(int eventType,int year,int month,int day,int hour){
-	if(eventType == 0){									// controlling eventType for Task objects 
+	if(eventType == 0){						// controlling eventType for Task objects 
 		Task* t = new Task(year,month,day,hour);		// Creates a new Task object
 		if(tail == NULL)
 			head = t;
@@ -12,7 +12,7 @@ Event* Calendar::addEvent(int eventType,int year,int month,int day,int hour){
 			tail = t;
 			return t;
 	}
-	else if (eventType == 1){							// controlling eventType for Appointment objects
+	else if (eventType == 1){						// controlling eventType for Appointment objects
 		Appointment* p = new Appointment(year,month,day,hour);		// Creates a new Appointment object
 		if(tail == NULL)
 			head = p;
@@ -28,12 +28,12 @@ void Calendar::deleteEvent(int r){
 	Event *temp3;
 	temp3 = head;
 	bool s = false;
-	while (temp3 != NULL){
+	while (temp3 != NULL){				// this loop used for checking the list if it has an Event with a given id.  
 		if (temp3->id == r )
 			s = true;
 			temp3 = temp3->next;
 		}
-	if(s == false) throw "EventNotFound";
+	if(s == false) throw "EventNotFound";		// throw systax for exeption block, throw an error message
 		
 		
 		
@@ -67,7 +67,7 @@ void Calendar::deleteEvent(int r){
 }
 
 void Calendar::listEvents(){					// this method lists the all events of the linklist
-	if (head == NULL) throw "ListEmpty";
+	if (head == NULL) throw "ListEmpty";			// throw an error message
 	cout << "-----Begining of the list-----" << endl;
 	Event *temp = head;
 	while(temp != NULL){
@@ -81,14 +81,14 @@ void Calendar::listEvents(){					// this method lists the all events of the link
 void Calendar::filterEvents(int a,int b){			// this method lists the events with specific year and month
 	Event *temp = head;
 	bool s = false;
-	while (temp != NULL){
+	while (temp != NULL){					// this loop checks if the list has an Event with given year and month
 		if (temp->year == a && temp->month == b){
 			s = true;
 		}
 		temp = temp->next;
 	}
 	
-	if (s == false) throw "NoMatchingEvent";
+	if (s == false) throw "NoMatchingEvent";		// throw an error message 
 	temp = head;
 	while (temp != NULL){
 		if (temp->year == a && temp->month == b){
